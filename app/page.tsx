@@ -12,7 +12,7 @@ export default function Home() {
           <p className="text-sm text-gray-400">Home / Dashboard</p>
         </div>
         <div className="flex items-center space-x-3">
-          <img src="/avatar.png" className="w-10 h-10 rounded-full" alt="User" />
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg" className="w-10 h-10 rounded-full" alt="User" />
           <div>
             <p className="font-semibold">Ryan Adhitama</p>
             <p className="text-sm text-gray-500">Web Developer</p>
@@ -21,9 +21,9 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-        <InfoCard title="Posts" value="10" icon="✏️" />
-        <InfoCard title="Categories" value="3" icon="🔲" />
-        <InfoCard title="Users" value="2" icon="👤" />
+        <InfoCard title="Blogs" value="10" icon="ri-pencil-fill" />
+        <InfoCard title="Categories" value="3" icon="ri-book-shelf-line" />
+        <InfoCard title="Published Blogs" value="2" icon="ri-book-marked-fill" />
       </div>
 
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -77,10 +77,12 @@ function InfoCard({ title, value, icon }: { title: string; value: string; icon: 
   return (
     <div className="bg-[#098A46]/5 text-[#098A46] p-6 rounded-xl flex items-center justify-between">
       <div>
-        <p className="text-sm">{title}</p>
+        <p className="text-sm" style={{
+              fontFamily : "cursive"
+            }}>{title}</p>
         <h3 className="text-2xl font-bold">{value}</h3>
       </div>
-      <div className="text-3xl">{icon}</div>
+      <div className="text-3xl"><i className={icon}></i></div>
     </div>
   );
 }

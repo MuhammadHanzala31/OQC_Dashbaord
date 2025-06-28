@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Sidebar() {
@@ -20,20 +21,27 @@ export default function Sidebar() {
       >
         <div className="flex flex-col h-full justify-between">
           <div>
-            <h2 className="text-3xl font-bold mb-10 font-poppins" >Online <span className='text-[#FFB706]'>Quran</span> </h2>
-            <nav className="space-y-4">
-              {['Dashboard', 'Posts', 'Categories', 'Media', 'Users', 'Settings'].map((item) => (
-                <a key={item} href="#" className="block hover:text-[#FFB706] font-medium">
-                  {item}
-                </a>
+            <h2 className="text-2xl font-semibold mb-10 " style={{
+              fontFamily : "fantasy"
+            }}>Online <span className='text-[#FFB706]'>Quran</span> Course </h2>
+            <nav className="space-y-4 flex flex-col gap-[10px]">
+              {[{ name: 'Dashboard', icon: 'ri-dashboard-fill' }, { name: 'Profile', icon: 'ri-user-2-fill' }, { name: 'Blogs', icon: 'ri-book-read-fill' }, {name : 'Categories' , icon : 'ri-book-shelf-fill' }, {name:'Settings', icon : 'ri-settings-5-fill'}].map((item) => (
+                <Link key={item.name} href="#" className="flex items-center gap-2 hover:text-[#FFB706] py-2 px-4 rounded-md font-medium hover:bg-[#098a46]">
+                  <i className={`${item.icon}  text-2xl`}></i>
+                  <p className='mb-0' style={{
+                    fontFamily : "cursive"
+                  }}> {item.name}</p>
+                </Link>
               ))}
             </nav>
           </div>
-          <div className="bg-white bg-opacity-10 p-4 rounded-lg flex items-center space-x-3 text-sm mt-8">
-            <div className="text-2xl">📖</div>
-            <div>
-              <p>User Guide</p>
-              <p className="text-xs text-white/70">Documentation</p>
+          <div className="bg-white text-[#098a46] bg-opacity-10 p-4 rounded-lg flex items-center space-x-3 text-sm mt-8">
+            <div className="text-2xl" style={{
+              fontFamily : "fantasy"
+            }}>📖</div>
+            <div >
+              <p>Online Quran</p>
+              <p className="text-xs ">Course Blogs</p>
             </div>
           </div>
         </div>

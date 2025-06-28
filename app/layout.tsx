@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import 'remixicon/fonts/remixicon.css'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
