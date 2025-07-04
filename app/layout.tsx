@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import 'remixicon/fonts/remixicon.css'
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +13,7 @@ const geistSans = Geist({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "100", "200", "300", "600" , "500", "700", "800"],
+  weight: ["400", "100", "200", "300", "600", "500", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -31,11 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-     <html lang="en" className={`${poppins.variable}`}>
+    <html lang="en" className={`${poppins.variable}`}>
       <body className="bg-gray-50 text-gray-800 font-sans">
         <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 p-8">{children}</main>
+          <main className="flex-1">
+            <div>
+              <Toaster/>
+              {children}
+            </div>
+          </main>
         </div>
       </body>
     </html>

@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tinymce/tinymce-react": "^6.2.1",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "remixicon": "^4.6.0"
+    "react-hot-toast": "^2.5.2",
+    "remixicon": "^4.6.0",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
